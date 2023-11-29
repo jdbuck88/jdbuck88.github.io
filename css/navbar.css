@@ -1,0 +1,256 @@
+html {
+  scroll-padding-top: 200px;
+}
+
+body {
+  background: black;
+  font-family: Courier, Arial;
+  color: white;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.skip  {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  overflow: hidden;
+}
+
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  color: lightblue
+}
+
+header {
+  position: fixed;
+  background-color: #333;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 5px 8px whitesmoke;
+}
+
+li {
+  font-family: Verdana;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 17px 16px;
+  text-decoration: none;
+}
+
+
+nav li:first-child a{ border-left: 10px solid #fcd95b; }
+nav li:nth-child(2) a{ border-left: 10px solid #d69c3a; }
+nav li:nth-child(3) a{ border-left: 10px solid #946331; }
+nav li:last-child a{ border-left: 10px solid #634231; }
+
+.logo {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 53px;
+  width: auto;
+}
+
+.flexbox-container {
+  display:flex;
+  flex-direction: column;
+}
+
+.flexbox-item {
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+}
+
+h1 {
+  font-family: courier;
+  font-size: xx-large;
+}
+
+.page1, .page3 {
+  background-color: black;
+  padding-bottom: 50px;
+}
+
+.page2 {
+  background-color: gray;
+  color: black;
+  padding-bottom: 100px;
+}
+
+.page4 {
+  background-color: gray;
+}
+
+footer {
+  text-align: center;
+}
+
+img.bottles {
+  width: 80%;
+}
+
+img.map{
+  width: 50%;
+}
+
+img.ferry{
+  width: 70%;
+} 
+
+img.glass {
+  width: 30%;
+}
+
+img.wheel {
+  width: 90%;
+}
+
+img.Josh{
+  width: 50%;
+  max-width: 800px;
+}
+
+/* to animate logo */
+@keyframes moveleft {
+  0% {
+	margin-right: 0px;
+  } 
+  25% {
+	margin-right: 180px;
+  }
+  50% {
+  margin-right: 0px;
+  }
+  100% {
+  margin-right: 0px;
+}
+
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-360deg)}
+  50% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.logo {
+  -webkit-animation: moveleft 3s linear infinite, spin 3000ms linear infinite ;
+	-moz-animation: moveleft 3s linear infinite, spin 3000ms linear infinite;
+	animation: moveleft 3s linear infinite, spin 3000ms linear infinite ;
+  animation-delay: 10s;
+  animation-iteration-count: 10;
+
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+  body{
+    scroll-padding-top: 200px;
+    padding-top: 200px;
+    width: 100%
+  }
+
+  img {
+    text-align: center;
+    width: 90%;
+    height: auto;
+  }
+
+
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+
+  body{
+    scroll-padding-top: 200px;
+    padding-top: 200px;
+  }
+ 
+  img {
+    text-align: center;
+    max-width: 900px;
+    height: auto;
+  }
+
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+
+  html {
+    scroll-padding-top: 30px;
+  }
+
+  nav li {
+    display: inline;
+    float: left;
+  }
+  
+  nav li a:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Attributes */
+  nav li a[class$="me"]:hover {
+    background-color: lightgrey;
+    color: black;
+  }
+  
+  nav li:first-child a{ border-left: 10px solid #fcd95b; }
+  nav li:nth-child(2) a{ border-left: 10px solid #d69c3a; }
+  nav li:nth-child(3) a{ border-left: 10px solid #946331; }
+  nav li:last-child a{ border-left: 10px solid #634231; }
+
+  nav li a:after { 
+    content: "";
+    height: 6%; 
+    left: 0; 
+    top: 0; 
+    width: 0px;  
+    position: fixed; 
+    transition: all 0.8s ease 0s; 
+    -webkit-transition: all 0.8s ease 0s; 
+    z-index: -1;
+  }
+  
+  nav li a:hover:after{ width: 100%; }
+  nav li:first-child a:after{ background: #fcd95b; }
+  nav li:nth-child(2) a:after{ background: #d69c3a; }
+  nav li:nth-child(3) a:after{ background: #946331; }
+  nav li:last-child a:after{ background: #634231; }
+
+  img {
+    transition: transform 0.25s ease;
+  }
+
+  img.wheel {
+   max-width: 600px;
+  }
+
+  img.wheel:hover {
+    -webkit-transform:scale(1.5); 
+    transform:scale(1.5);
+  }
+
+}
