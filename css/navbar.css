@@ -1,5 +1,5 @@
 html {
-  scroll-padding-top: 200px;
+  scroll-padding-top: 30px;
 }
 
 body {
@@ -38,13 +38,17 @@ li {
   font-family: Verdana;
 }
 
-
 nav ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 	background-color: #333;
+}
+
+nav li {
+  display: inline;
+  float: left;
 }
 
 nav li a {
@@ -163,11 +167,8 @@ img.Josh{
 }
 
 /* Mobile Styles */
-@media only screen and (max-width: 400px) {
-  html {
-    scroll-padding-top: 20px;
-  }
-  
+@media only screen and (min-width: 390px) {
+
   body{
     width: 100%
   }
@@ -178,40 +179,11 @@ img.Josh{
     height: auto;
   }
 
-  nav li {
-    display: inline;
-    float: left;
-  }
-
 }
 
-/* Tablet Styles */
-@media only screen and (min-width: 401px) and (max-width: 960px) {
-
-  body{
-    scroll-padding-top: 200px;
-    padding-top: 200px;
-  }
- 
-  img {
-    text-align: center;
-    max-width: 900px;
-    height: auto;
-  }
-
-}
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
-
-  html {
-    scroll-padding-top: 30px;
-  }
-
-  nav li {
-    display: inline;
-    float: left;
-  }
   
   nav li a:hover {
     background-color: white;
